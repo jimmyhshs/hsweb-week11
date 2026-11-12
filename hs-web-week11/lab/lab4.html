@@ -46,6 +46,23 @@
     꼭 들어가야 하는 것: .reduce(  .filter(  stock === 0|stock===0  .sort(  ...products|[...
     */
     // 여기에 JavaScript를 작성하세요
+    const products = [
+  { id: 1, name: '노트북', price: 1200000, stock: 5 },
+  { id: 2, name: '마우스', price: 25000, stock: 0 },
+  { id: 3, name: '노트', price: 3000, stock: 42 },
+];
+
+// ① 총 재고 금액
+const totalValue = products.reduce((sum, p) => sum + p.price * p.stock, 0);
+console.log('총 재고 금액:', totalValue.toLocaleString() + '원');
+
+// ② 품절 상품
+const soldOut = products.filter(p => p.stock === 0).map(p => p.name);
+console.log('품절:', soldOut);
+
+// ③ 가장 비싼 상품 (원본을 건드리지 않으려고 복사 후 정렬)
+const priciest = [...products].sort((a, b) => b.price - a.price)[0];
+console.log('최고가:', priciest.name);
   </script>
 </body>
 </html>
