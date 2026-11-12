@@ -46,6 +46,18 @@
     꼭 들어가야 하는 것: .filter(  .map(  .join(  year === 1|year===1
     */
     // 여기에 JavaScript를 작성하세요
+    const students = [
+  { name: '김한신', year: 1, score: 88 },
+  { name: '이길동', year: 2, score: 74 },
+  { name: '박영희', year: 1, score: 92 },
+];
+
+const freshmen = students
+  .filter(s => s.year === 1)
+  .map(s => s.name)
+  .join(', ');
+
+console.log('1학년:', freshmen);
   </script>
 </body>
 </html>
