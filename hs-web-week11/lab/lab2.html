@@ -46,6 +46,15 @@
     꼭 들어가야 하는 것: .filter(  >= 60|>=60  .reduce(  .length  console.log
     */
     // 여기에 JavaScript를 작성하세요
+    const scores = [95, 42, 88, 67, 55];
+
+const passed = scores.filter(s => s >= 60);
+const sum = passed.reduce((acc, s) => acc + s, 0);
+const avg = sum / passed.length;
+
+console.log('합격:', passed);
+console.log('인원:', passed.length);
+console.log('평균:', avg.toFixed(1));
   </script>
 </body>
 </html>
